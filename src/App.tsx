@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import GardientBox from './components/gardientbox/gardientbox.component';
+
 import './App.css';
 
 function App() {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    console.log(event.currentTarget.innerText, "clicked");
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
+      <GardientBox title="Hello" content="World" onClick={handleClick} />
     </div>
   );
 }

@@ -1,0 +1,95 @@
+.gardient-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 320px;
+  height: 400px;
+  color: #fff;
+  background: #111;
+  margin: 20px 30px;
+  transition: 0.5s;
+}
+
+.gardient-box:hover {
+  transform: translateY(-20px);
+}
+
+.gardient-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gardient-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(30px);
+}
+
+.gardient-box:nth-child(odd)::before,
+.gardient-box:nth-child(odd)::after {
+  background: linear-gradient(45deg, #ffbc00, #ff0058);
+}
+
+.gardient-box:nth-child(even)::before,
+.gardient-box:nth-child(even)::after {
+  background: linear-gradient(-45deg, #03a9f4, #ff0058);
+}
+
+.gardient-box span {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  bottom: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.gardient-box span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.gardient-box .content {
+  position: relative;
+  z-index: 10;
+  padding: 20px 40px;
+}
+
+.gardient-box .content h2 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.gardient-box .content p {
+  font-size: 1.1em;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.gardient-box .content button {
+  display: inline-block;
+  font-size: 1.1em;
+  color: #111;
+  background: #fff;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
